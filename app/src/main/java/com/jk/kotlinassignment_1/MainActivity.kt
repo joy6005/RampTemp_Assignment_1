@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity()
         sortByYear()
         sortByName()
 
-        // added line here. Line 2 added.
+        
     }
 
     fun addData()
