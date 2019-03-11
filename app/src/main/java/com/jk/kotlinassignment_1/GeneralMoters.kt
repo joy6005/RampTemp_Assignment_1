@@ -1,30 +1,34 @@
 package com.jk.kotlinassignment_1
 
-class GeneralMoters (var carName : String , var releaseYear : Int,var horsePower : Int,var trailer : Boolean,var rearCamera : Boolean,var price : Double)
+class GeneralMoters:Cars
 {
 
-    internal class SortbyCarName : Comparator<GeneralMoters> {
-        // Used for sorting in ascending order of
-        // car name
-        override fun compare(a: GeneralMoters, b: GeneralMoters): Int {
-            return a.carName.compareTo(b.carName)
-        }
+    var carName : String = ""
+
+    constructor(){
     }
 
-    internal class SortbyCarPrice : Comparator<GeneralMoters> {
-        // Used for sorting in ascending order of
-        // price
-        override fun compare(a: GeneralMoters, b: GeneralMoters): Int {
-            return a.price.compareTo(b.price)
-        }
+
+    constructor(releaseYear: Int, horsePower: Int, trailer: Boolean, rearCamera: Boolean, price: Double, carName : String):super(releaseYear, horsePower, trailer, rearCamera, price)
+    {
+        this.carName = carName
     }
 
-    internal class SortbyCarYear : Comparator<GeneralMoters> {
-        // Used for sorting in ascending order of
-        // price
-        override fun compare(a: GeneralMoters, b: GeneralMoters): Int {
-            return a.releaseYear.compareTo(b.releaseYear)
-        }
+
+    override fun sortByPrice(carList:ArrayList<GeneralMoters>):List<GeneralMoters>
+    {
+        return carList.sortedWith(compareBy({it.price}))
     }
+
+    override fun sortByName(carList:ArrayList<GeneralMoters>):List<GeneralMoters>
+    {
+        return carList.sortedWith(compareBy({it.carName}))
+    }
+
+    override fun sortByYear(carList:ArrayList<GeneralMoters>):List<GeneralMoters>
+    {
+        return carList.sortedWith(compareBy({it.releaseYear}))
+    }
+
 
 }
