@@ -3,6 +3,7 @@ package com.jk.kotlinassignment_1
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
+//Test
 class MainActivity : AppCompatActivity() {
     //var carList = ArrayList<GeneralMoters>()
 
